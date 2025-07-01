@@ -28,15 +28,44 @@ public class Prodotto {
         this.iva = iva;
     }
 
+    // Name
+    public String getName() {
+        return this.name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    // Description
+    public String getDescription() {
+        return this.desc;
+    }
+
+    public void setDesc(String desc) {
+        this.desc = desc;
+    }
+
+    // Price
     public float getPrice() {
         return this.price;
     }
 
+    public void setPrice(float price) {
+        this.price = price;
+    }
+
+    // Price Iva
     public float getPriceIva() {
         if (price != 0 && iva != 0) {
-            return this.price = price * iva;
+            float priceIva = price * 22 / 100;
+            return this.price = price + priceIva;
         }
         return 0;
+    }
+
+    public void setPriceIva(float iva) {
+        this.iva = iva;
     }
 
     public String getExtendedName() {
