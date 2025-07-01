@@ -33,7 +33,7 @@ public class Prodotto {
         return this.name;
     }
 
-    public void setName(String name) {
+    private void setName(String name) {
         this.name = name;
     }
 
@@ -42,7 +42,7 @@ public class Prodotto {
         return this.desc;
     }
 
-    public void setDesc(String desc) {
+    private void setDesc(String desc) {
         this.desc = desc;
     }
 
@@ -51,20 +51,19 @@ public class Prodotto {
         return this.price;
     }
 
-    public void setPrice(float price) {
+    private void setPrice(float price) {
         this.price = price;
     }
 
     // Price Iva
     public float getPriceIva() {
         if (price != 0 && iva != 0) {
-            float priceIva = price * 22 / 100;
-            return this.price = price + priceIva;
+            return this.price = price + (price * iva);
         }
         return 0;
     }
 
-    public void setPriceIva(float iva) {
+    private void setPriceIva(float iva) {
         this.iva = iva;
     }
 
