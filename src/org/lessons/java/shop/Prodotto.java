@@ -19,17 +19,17 @@ public class Prodotto {
         extendedName(code, name);
     }
 
-    float changePriceIva(float price) {
+    public float changePriceIva(float price) {
         this.priceIva = price * 0.22f;
         return priceIva;
     }
 
-    float basicPrice(float price) {
+    public float basicPrice(float price) {
         this.price = price;
         return price;
     }
 
-    String extendedName(int code, String name) {
+    public String extendedName(int code, String name) {
         this.extendedName = code + "-" + name;
         return extendedName;
     }
