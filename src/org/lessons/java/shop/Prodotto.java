@@ -1,36 +1,40 @@
 package org.lessons.java.shop;
 
+import java.util.Random;
+
 public class Prodotto {
     public int code;
     public String name;
     public String desc;
     public float price;
-    public float priceIva;
-    public String extendedName;
+    public float iva;
 
-    public Prodotto(int code, String name, String desc, float price) {
+    public Prodotto(String name, String desc, float price, float iva) {
+        Random random = new Random();
 
-        this.code = code;
+        this.code = random.nextInt(99999);
         this.name = name;
         this.desc = desc;
-
-        basicPrice(price);
-        changePriceIva(price);
-        extendedName(code, name);
-    }
-
-    public float changePriceIva(float price) {
-        this.priceIva = price * 0.22f;
-        return priceIva;
-    }
-
-    public float basicPrice(float price) {
         this.price = price;
-        return price;
+        this.iva = iva;
     }
 
-    public String extendedName(int code, String name) {
-        this.extendedName = code + "-" + name;
-        return extendedName;
+    public float getPrice() {
+        return this.price;
+    }
+
+    public float getPriceIva() {
+        if (price != 0 && iva != 0) {
+            return this.price = price * iva;
+        }
+        return 0;
+    }
+
+    public String getExtendedName() {
+        if (name != null) {
+            return code + "-" + name;
+        }
+        return null;
+
     }
 }
